@@ -8,7 +8,7 @@ import {io} from 'socket.io-client';
 import '../css/Post.css';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 var socket;
-const ENDPOINT = "http://localhost:4000";
+const ENDPOINT = "https://comp1682be.onrender.com";
 export default function PostPage() {
     const [postInfo,setPostInfo] = useState(null);
     const {userInfo} = useContext(UserContext);
@@ -55,7 +55,7 @@ export default function PostPage() {
     }, []);
     
     useEffect(() => {
-        fetch(`http://localhost:4000/post/${id}`,{
+        fetch(`https://comp1682be.onrender.com/post/${id}`,{
             credentials: 'include',
         })
             .then(response => {
@@ -74,7 +74,7 @@ export default function PostPage() {
 
     const addComment = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/post/comment/${id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/post/comment/${id}`, {
                 method: 'PUT',
                 credentials: 'include',
                 headers: {
@@ -101,7 +101,7 @@ export default function PostPage() {
 
     const handleLike = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/post/addLike/${id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/post/addLike/${id}`, {
                 method: 'PUT',
                 credentials: 'include',
                 headers: {
@@ -122,7 +122,7 @@ export default function PostPage() {
 
     const handleDislike = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/post/removeLike/${id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/post/removeLike/${id}`, {
                 method: 'PUT',
                 credentials: 'include',
                 headers: {
@@ -161,7 +161,7 @@ export default function PostPage() {
                 </div>
             )}
             <div className="image">
-                <img src={`http://localhost:4000/${postInfo.cover}`} alt=""/>
+                <img src={`https://comp1682be.onrender.com/${postInfo.cover}`} alt=""/>
             </div>
             <div className="content" dangerouslySetInnerHTML={{__html:postInfo.content}} />
             <div className="likes-container">
@@ -177,7 +177,7 @@ export default function PostPage() {
                     {postInfo.comments && postInfo.comments.map((comment, index) => (
                         <div key={index} className="comment">
                             <p>{comment.text}</p>
-                            <p>Posted by: {comment.postedBy?.username}</p>
+                            {/* <p>Posted by: {comment.postedBy?.username}</p> */}
                         </div>
                     ))}
                 </div>

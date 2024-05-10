@@ -37,7 +37,7 @@ export default function AdminPage() {
     // Function to fetch categories from the server
     const fetchCategories = async () => {
         try {
-            const response = await fetch('http://localhost:4000/category', {
+            const response = await fetch('https://comp1682be.onrender.com/category', {
                 credentials: 'include',
             });
             if (!response.ok) {
@@ -62,7 +62,7 @@ export default function AdminPage() {
             return;
         }
         try {
-            const response = await fetch('http://localhost:4000/category/add', {
+            const response = await fetch('https://comp1682be.onrender.com/category/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export default function AdminPage() {
             return;
         }
         try {
-            const response = await fetch(`http://localhost:4000/category/edit/${editCategory._id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/category/edit/${editCategory._id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export default function AdminPage() {
     // Function to delete a category
     const handleDeleteCategory = async (id) => {
         try {
-            const response = await fetch(`http://localhost:4000/category/delete/${id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/category/delete/${id}`, {
                 method: 'DELETE',
                 credentials: 'include',
             });
@@ -127,7 +127,7 @@ export default function AdminPage() {
     const fetchGuests = async () => {
         
         try {
-            const response = await fetch('http://localhost:4000/guest', {
+            const response = await fetch('https://comp1682be.onrender.com/guest', {
                 credentials: 'include',
             });
             if (!response.ok) {
@@ -151,7 +151,7 @@ export default function AdminPage() {
             return;
         }
         try {
-            const response = await fetch('http://localhost:4000/guest/add', {
+            const response = await fetch('https://comp1682be.onrender.com/guest/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -171,12 +171,12 @@ export default function AdminPage() {
 
     // Function to edit a guest
     const handleEditGuest = async () => {
-        if (!editGuest.name.trim() || !editGuest.dob || !editGuest.gender || !editGuest.address || !editGuest.username || !editGuest.email || !editGuest.password) {
-            setErrorMessage('Please enter all guest details');
-            return;
-        }
+        // if (!editGuest.name.trim() || !editGuest.dob || !editGuest.gender || !editGuest.address || !editGuest.username || !editGuest.email || !editGuest.password) {
+        //     setErrorMessage('Please enter all guest details');
+        //     return;
+        // }
         try {
-            const response = await fetch(`http://localhost:4000/guest/edit/${editGuest._id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/guest/edit/${editGuest._id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -198,7 +198,7 @@ export default function AdminPage() {
  
     const handleDeleteGuest = async (id) => {
         try {
-            const response = await fetch(`http://localhost:4000/guest/delete/${id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/guest/delete/${id}`, {
                 method: 'DELETE',
                 credentials: 'include',
             });
@@ -214,7 +214,7 @@ export default function AdminPage() {
 
     const fetchBloggers = async () => {
         try {
-            const response = await fetch('http://localhost:4000/blogger', {
+            const response = await fetch('https://comp1682be.onrender.com/blogger', {
                 credentials: 'include',
             });
             if (!response.ok) {
@@ -238,7 +238,7 @@ export default function AdminPage() {
         }
         debugger;
         try {
-            const response = await fetch('http://localhost:4000/blogger/add', {
+            const response = await fetch('https://comp1682be.onrender.com/blogger/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -257,12 +257,12 @@ export default function AdminPage() {
     };
 
     const handleEditBlogger = async () => {
-        if (!editBlogger.name.trim() || !editBlogger.dob || !editBlogger.gender || !editBlogger.address || !editBlogger.username || !editBlogger.email || !editBlogger.password) {
-            setErrorMessage('Please enter all blogger details');
-            return;
-        }
+        // if (!editBlogger.name.trim() || !editBlogger.dob || !editBlogger.gender || !editBlogger.address || !editBlogger.username || !editBlogger.email || !editBlogger.password) {
+        //     setErrorMessage('Please enter all blogger details');
+        //     return;
+        // }
         try {
-            const response = await fetch(`http://localhost:4000/blogger/edit/${editBlogger._id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/blogger/edit/${editBlogger._id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -283,7 +283,7 @@ export default function AdminPage() {
 
     const handleDeleteBlogger = async (id) => {
         try {
-            const response = await fetch(`http://localhost:4000/admin/blogger/delete/${id}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/admin/blogger/delete/${id}`, {
                 method: 'DELETE',
                 credentials: 'include',
             });
@@ -299,7 +299,7 @@ export default function AdminPage() {
 
     const fetchPendingPins = async () => {
         try {
-            const response = await fetch('http://localhost:4000/pins/pending', {
+            const response = await fetch('https://comp1682be.onrender.com/pins/pending', {
                 credentials: 'include',
             });
             if (!response.ok) {
@@ -319,7 +319,7 @@ export default function AdminPage() {
 
     const handleApprovePin = async (pinId) => {
         try {
-            const response = await fetch(`http://localhost:4000/pin/approve/${pinId}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/pin/approve/${pinId}`, {
                 method: 'PUT',
                 credentials: 'include',
             });
@@ -338,7 +338,7 @@ export default function AdminPage() {
     
     const handleRejectPin = async (pinId) => {
         try {
-            const response = await fetch(`http://localhost:4000/pin/delete/${pinId}`, {
+            const response = await fetch(`https://comp1682be.onrender.com/pin/delete/${pinId}`, {
                 method: 'DELETE',
                 credentials: 'include',
             });

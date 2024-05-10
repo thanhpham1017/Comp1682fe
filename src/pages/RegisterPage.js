@@ -33,7 +33,8 @@ export default function RegisterPage() {
       alert(validation);
       return;
     }
-    const response = await fetch('http://localhost:4000/register', {
+    //https://comp1682be.onrender.com
+    const response = await fetch('https://comp1682be.onrender.com/register', {
       method: 'POST',
       body: JSON.stringify({ email, username, password, role }), // Bao gồm trường role trong dữ liệu gửi đi
       headers: { 'Content-Type': 'application/json' },

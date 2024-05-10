@@ -12,7 +12,7 @@ export default function EditPost() {
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`https://comp1682be.onrender.com/post/${id}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -44,7 +44,7 @@ export default function EditPost() {
     if (files?.[0]) {
       data.set('file', files?.[0]);
     }
-    const response = await fetch('http://localhost:4000/post', {
+    const response = await fetch('https://comp1682be.onrender.com/post', {
       method: 'PUT',
       body: data,
       credentials: 'include',
@@ -58,7 +58,7 @@ export default function EditPost() {
     const confirmDelete = window.confirm("Are you sure you want to delete this post?");
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost:4000/post/delete/${id}`, {
+        const response = await fetch(`https://comp1682be.onrender.com/post/delete/${id}`, {
           method: 'DELETE',
           credentials: 'include',
         });

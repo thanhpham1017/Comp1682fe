@@ -22,7 +22,7 @@ export default function LoginPage() {
 
     async function login(ev) {
         ev.preventDefault();
-        const response = await fetch('http://localhost:4000/login', {
+        const response = await fetch('https://comp1682be.onrender.com/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -78,11 +78,7 @@ export default function LoginPage() {
                     <button className="custom-button">Login</button>
                     {error && <p className="error-message">{error}</p>}
                     <p>Don't have an account? <Link to="/register">Register</Link></p>
-                    {/* <div className="alternative-login-options">
-                        <p>Or</p>
-                        <button className="facebook-custom"><FaFacebook /></button>
-                        <button className="google-custom"><FaGoogle /></button>
-                    </div> */}
+
                 </form>
             </div>
         </div>

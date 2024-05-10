@@ -6,14 +6,14 @@ import { FaBell } from 'react-icons/fa';
 import {io} from 'socket.io-client'; 
 import './css/Header.css';
 var socket;
-const ENDPOINT = "http://localhost:4000";
+const ENDPOINT = "https://comp1682be.onrender.com";
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [notifications, setNotifications] = useState([]); 
 
   useEffect(() => {
-    fetch('http://localhost:4000/profile', {
+    fetch('https://comp1682be.onrender.com/profile', {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
@@ -24,7 +24,7 @@ export default function Header() {
 
 
   function logout() {
-    fetch('http://localhost:4000/logout', {
+    fetch('https://comp1682be.onrender.com/logout', {
       credentials: 'include',
       method: 'POST',
     });
@@ -79,7 +79,7 @@ export default function Header() {
               {dropdownOpen && (
                 <div className="dropdown-menu">
                   <Link to="/create" className="create-post">Create new post</Link>
-                  <Link to="/profile/settings" className="profile-username">Profile</Link>
+                  {/* <Link to="/profile/settings" className="profile-username">Profile</Link> */}
                   {/* {isAdmin && <a href="/admin">Admin</a>}  */}
                   <button onClick={logout} className="logout-btn">Logout</button>
                 </div>
